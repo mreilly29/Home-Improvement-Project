@@ -24,21 +24,27 @@ namespace HitApp.Data
         {
             modelBuilder.Entity<Project>().HasData(
 
-               new Project() { ProjectId = 1, ProjectName = "Upstairs Bathroom", ProjectStartDate = new DateTime(2018, 10, 2), ProjectEndDate = new DateTime(2018, 11, 2), ProjectDescription = "Paint and re-tile bathroom walls and floors", ProjectTotalBudget = 3500.00, ProjectTotalExpenses = 0, ProjectOwnerId = "8c3d65a8-8252-420c-aeaf-3ae2f758ce2a" },
-               new Project() { ProjectId = 2, ProjectName = "Kitchen", ProjectStartDate = new DateTime(2018, 10, 5), ProjectEndDate = new DateTime(2018, 11, 2), ProjectDescription = "Paint and re-finish wood floors. Electricty in island and other new appliances", ProjectTotalBudget = 3000.00, ProjectTotalExpenses = 0, ProjectOwnerId = "8c3d65a8-8252-420c-aeaf-3ae2f758ce2a" },
-               new Project() { ProjectId = 3, ProjectName = "Basement", ProjectStartDate = new DateTime(2018, 10, 11), ProjectEndDate = new DateTime(2018, 11, 2), ProjectDescription = "Take out part of basement wall, add baseboard heaters", ProjectTotalBudget = 2500.00, ProjectTotalExpenses = 0, ProjectOwnerId = "8c3d65a8-8252-420c-aeaf-3ae2f758ce2a" }
+               new Project() { ProjectId = 1, ProjectName = "Upstairs Bathroom", ProjectStartDate = new DateTime(2018, 10, 2), ProjectEndDate = new DateTime(2018, 11, 2), ProjectDescription = "Paint and re-tile bathroom walls and floors", ProjectTotalBudget = 5000.00, ProjectTotalExpenses = 0, ProjectIsOnDashboard=true, ProjectOwnerId = "ec8ee904-0427-43ee-8468-ed5700fa4c32" },
+               new Project() { ProjectId = 2, ProjectName = "Downstairs Bathroom", ProjectStartDate = new DateTime(2018, 5, 11), ProjectEndDate = new DateTime(2018, 6, 2), ProjectDescription = "Paint and re-tile bathroom walls and floors. New toilet and small corner vanity.", ProjectTotalBudget = 2400.00, ProjectTotalExpenses = 0, ProjectIsOnDashboard = false, ProjectOwnerId = "ec8ee904-0427-43ee-8468-ed5700fa4c32" },
+
+               new Project() { ProjectId = 3, ProjectName = "Kitchen", ProjectStartDate = new DateTime(2018, 10, 5), ProjectEndDate = new DateTime(2018, 11, 2), ProjectDescription = "Paint and re-finish wood floors. Electricty in island and other new appliances", ProjectTotalBudget = 4000.00, ProjectTotalExpenses = 0, ProjectIsOnDashboard = true, ProjectOwnerId = "ec8ee904-0427-43ee-8468-ed5700fa4c32" },
+               new Project() { ProjectId = 4, ProjectName = "Basement", ProjectStartDate = new DateTime(2018, 10, 11), ProjectEndDate = new DateTime(2018, 11, 2), ProjectDescription = "Take out part of basement wall, add baseboard heaters", ProjectTotalBudget = 2500.00, ProjectTotalExpenses = 0, ProjectIsOnDashboard = true, ProjectOwnerId = "ec8ee904-0427-43ee-8468-ed5700fa4c32" }
                );
 
             modelBuilder.Entity<Expense>().HasData(
-                new Expense() { ExpenseId = 1, ExpenseName = "Vanity", ExpenseNotes = "60 in. Vanity, Home Depot", ExpenseCost = 1039.35, ProjectId = 1, ProductUrl = "https://www.homedepot.com/p/Home-Decorators-Collection-Sonoma-60-in-W-x-22-in-D-Double-Bath-Vanity-in-White-with-Carrara-Marble-Top-with-White-Basins-8105300410/205866623" },
-                new Expense() { ExpenseId = 2, ExpenseName = "Bath Towel Set", ExpenseNotes = "Bronze towel bar set from Home Depot", ExpenseCost = 95.96, ProjectId = 1 },
-                new Expense() { ExpenseId = 3, ExpenseName = "Mirror", ExpenseNotes = "2 mirrors for vanity", ExpenseCost = 107.74, ProjectId = 1 },
-                new Expense() { ExpenseId = 4, ExpenseName = "Tile", ExpenseNotes = "From Home Depot", ExpenseCost = 372.14, ProjectId = 1, ProductUrl= "https://www.homedepot.com/p/TrafficMASTER-Portland-Stone-Beige-18-in-x-18-in-Glazed-Ceramic-Floor-and-Wall-Tile-17-44-sq-ft-case-PT011818HD1PV/205897841" },
-                new Expense() { ExpenseId = 5, ExpenseName = "Paint", ExpenseNotes = "BEHR MARQUEE 2 gal. #780F-4 Sparrow One-Coat Hide Satin Enamel Interior Paint and Primer in One", ExpenseCost = 90, ProjectId = 1 },
-                new Expense() { ExpenseId = 6, ExpenseName = "Jamie Painting labor", ExpenseNotes = "", ExpenseCost = 150, ProjectId = 1 },
-                new Expense() { ExpenseId = 7, ExpenseName = "Jimmy Tile/construction labor", ExpenseNotes = "", ExpenseCost = 2000, ProjectId = 1 },
-                new Expense() { ExpenseId = 8, ExpenseName = "Electric labor", ExpenseNotes = "", ExpenseCost = 3450.89, ProjectId = 2 },
-                new Expense() { ExpenseId = 9, ExpenseName = "Electric labor", ExpenseNotes = "", ExpenseCost = 2470.12, ProjectId = 3 }
+                new Expense() { ExpenseId = 1,ExpenseDatePurchased = new DateTime(2018,10,2), ExpenseName = "Vanity", ExpenseNotes = "60 in. Vanity, Home Depot", ExpenseCost = 1039.35, ProjectId = 1, ProductUrl = "https://www.homedepot.com/p/Home-Decorators-Collection-Sonoma-60-in-W-x-22-in-D-Double-Bath-Vanity-in-White-with-Carrara-Marble-Top-with-White-Basins-8105300410/205866623" },
+                new Expense() { ExpenseId = 2, ExpenseDatePurchased = new DateTime(2018, 10, 3), ExpenseName = "Bath Towel Set", ExpenseNotes = "Bronze towel bar set from Home Depot", ExpenseCost = 95.96, ProjectId = 1 },
+                new Expense() { ExpenseId = 3, ExpenseDatePurchased = new DateTime(2018, 10, 7), ExpenseName = "Mirror", ExpenseNotes = "2 mirrors for vanity", ExpenseCost = 107.74, ProjectId = 1 },
+                new Expense() { ExpenseId = 4, ExpenseDatePurchased = new DateTime(2018, 10, 4), ExpenseName = "Tile", ExpenseNotes = "From Home Depot", ExpenseCost = 372.14, ProjectId = 1, ProductUrl= "https://www.homedepot.com/p/TrafficMASTER-Portland-Stone-Beige-18-in-x-18-in-Glazed-Ceramic-Floor-and-Wall-Tile-17-44-sq-ft-case-PT011818HD1PV/205897841" },
+                new Expense() { ExpenseId = 5, ExpenseDatePurchased = new DateTime(2018, 10, 4), ExpenseName = "Paint", ExpenseNotes = "BEHR MARQUEE 2 gal. #780F-4 Sparrow One-Coat Hide Satin Enamel Interior Paint and Primer in One", ExpenseCost = 90, ProjectId = 1 },
+                new Expense() { ExpenseId = 6, ExpenseDatePurchased = new DateTime(2018, 10, 17), ExpenseName = "Jamie Painting labor", ExpenseNotes = "", ExpenseCost = 150, ProjectId = 1 },
+                new Expense() { ExpenseId = 7, ExpenseDatePurchased = new DateTime(2018, 11, 1), ExpenseName = "Jimmy Tile/construction labor", ExpenseNotes = "", ExpenseCost = 1500, ProjectId = 1 },
+                new Expense() { ExpenseId = 8, ExpenseDatePurchased = new DateTime(2018, 10, 2), ExpenseName = "Electric labor", ExpenseNotes = "", ExpenseCost = 2250.89, ProjectId = 4 },
+                new Expense() { ExpenseId = 9, ExpenseDatePurchased = new DateTime(2018, 10, 2), ExpenseName = "Electric labor", ExpenseNotes = "", ExpenseCost = 2470.12, ProjectId = 3 },
+                new Expense() { ExpenseId = 10, ExpenseDatePurchased = new DateTime(2018, 10, 2), ExpenseName = "total expenses labor", ExpenseNotes = "", ExpenseCost = 1970.68, ProjectId = 2 }
+
+
+                
 
 
                 );
@@ -62,7 +68,7 @@ namespace HitApp.Data
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=HitAppV2;Trusted_Connection=True;";
+            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=HitAppV3;Trusted_Connection=True;";
 
             optionsBuilder.UseSqlServer(connectionString)
                 .UseLazyLoadingProxies();

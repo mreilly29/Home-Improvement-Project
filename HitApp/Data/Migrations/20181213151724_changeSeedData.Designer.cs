@@ -4,14 +4,16 @@ using HitApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HitApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181213151724_changeSeedData")]
+    partial class changeSeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -145,10 +147,10 @@ namespace HitApp.Data.Migrations
                     b.ToTable("Projects");
 
                     b.HasData(
-                        new { ProjectId = 1, ProjectDescription = "Paint and re-tile bathroom walls and floors", ProjectEndDate = new DateTime(2018, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectIsOnDashboard = true, ProjectName = "Upstairs Bathroom", ProjectOwnerId = "ec8ee904-0427-43ee-8468-ed5700fa4c32", ProjectStartDate = new DateTime(2018, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 5000.0, ProjectTotalExpenses = 0.0 },
-                        new { ProjectId = 2, ProjectDescription = "Paint and re-tile bathroom walls and floors. New toilet and small corner vanity.", ProjectEndDate = new DateTime(2018, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectIsOnDashboard = false, ProjectName = "Downstairs Bathroom", ProjectOwnerId = "ec8ee904-0427-43ee-8468-ed5700fa4c32", ProjectStartDate = new DateTime(2018, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 2400.0, ProjectTotalExpenses = 0.0 },
-                        new { ProjectId = 3, ProjectDescription = "Paint and re-finish wood floors. Electricty in island and other new appliances", ProjectEndDate = new DateTime(2018, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectIsOnDashboard = true, ProjectName = "Kitchen", ProjectOwnerId = "ec8ee904-0427-43ee-8468-ed5700fa4c32", ProjectStartDate = new DateTime(2018, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 4000.0, ProjectTotalExpenses = 0.0 },
-                        new { ProjectId = 4, ProjectDescription = "Take out part of basement wall, add baseboard heaters", ProjectEndDate = new DateTime(2018, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectIsOnDashboard = true, ProjectName = "Basement", ProjectOwnerId = "ec8ee904-0427-43ee-8468-ed5700fa4c32", ProjectStartDate = new DateTime(2018, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 2500.0, ProjectTotalExpenses = 0.0 }
+                        new { ProjectId = 1, ProjectDescription = "Paint and re-tile bathroom walls and floors", ProjectEndDate = new DateTime(2018, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectIsOnDashboard = true, ProjectName = "Upstairs Bathroom", ProjectOwnerId = "337e7562-fd6c-43ff-8824-1b7cfee39a63", ProjectStartDate = new DateTime(2018, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 5000.0, ProjectTotalExpenses = 0.0 },
+                        new { ProjectId = 2, ProjectDescription = "Paint and re-tile bathroom walls and floors. New toilet and small corner vanity.", ProjectEndDate = new DateTime(2018, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectIsOnDashboard = false, ProjectName = "Downstairs Bathroom", ProjectOwnerId = "337e7562-fd6c-43ff-8824-1b7cfee39a63", ProjectStartDate = new DateTime(2018, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 2400.0, ProjectTotalExpenses = 0.0 },
+                        new { ProjectId = 3, ProjectDescription = "Paint and re-finish wood floors. Electricty in island and other new appliances", ProjectEndDate = new DateTime(2018, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectIsOnDashboard = true, ProjectName = "Kitchen", ProjectOwnerId = "337e7562-fd6c-43ff-8824-1b7cfee39a63", ProjectStartDate = new DateTime(2018, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 4000.0, ProjectTotalExpenses = 0.0 },
+                        new { ProjectId = 4, ProjectDescription = "Take out part of basement wall, add baseboard heaters", ProjectEndDate = new DateTime(2018, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectIsOnDashboard = true, ProjectName = "Basement", ProjectOwnerId = "337e7562-fd6c-43ff-8824-1b7cfee39a63", ProjectStartDate = new DateTime(2018, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 2500.0, ProjectTotalExpenses = 0.0 }
                     );
                 });
 
